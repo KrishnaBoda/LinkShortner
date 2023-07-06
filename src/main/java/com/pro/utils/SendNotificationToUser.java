@@ -66,6 +66,7 @@ public class SendNotificationToUser {
 	
 	public void sendDataToPublic(StompSession stompSession,MessageEntity messageEntity) {
         String jsonHello = "{\"statusCode\" : "+messageEntity.getStatusCode()+"}";
+        log.info(jsonHello);
         stompSession.send(sendTo, jsonHello.getBytes());
   }
 }
